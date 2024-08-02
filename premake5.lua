@@ -2,7 +2,7 @@ project "stb"
 	kind "StaticLib"
 	language "C"
 	cdialect "c11"
-   	staticruntime "on"
+	staticruntime "on"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/Thirdparty/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/Thirdparty/%{prj.name}")
@@ -15,7 +15,7 @@ project "stb"
 
 	includedirs
 	{
-       		"*.h",
+		"*.h",
 		"*.c"
 	}
 
@@ -23,7 +23,7 @@ project "stb"
 	{
 		"_CRT_SECURE_NO_WARNINGS"
 	}
-    
+
 	filter "system:windows"
 		systemversion "latest"
 
