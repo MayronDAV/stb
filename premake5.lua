@@ -2,10 +2,10 @@ project "stb"
 	kind "StaticLib"
 	language "C"
 	cdialect "c11"
-    staticruntime "off"
+   	staticruntime "on"
 
-	targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("%{wks.location}/bin/" .. outputdir .. "/Thirdparty/%{prj.name}")
+	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/Thirdparty/%{prj.name}")
 
 	files
 	{
@@ -15,7 +15,7 @@ project "stb"
 
 	includedirs
 	{
-        "*.h",
+       		"*.h",
 		"*.c"
 	}
 
@@ -34,8 +34,3 @@ project "stb"
 	filter "configurations:Release"
 		runtime "Release"
 		optimize "on"
-
-	filter "configurations:Dist"
-		runtime "Release"
-		optimize "on"
-        symbols "off"
